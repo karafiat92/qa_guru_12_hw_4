@@ -34,7 +34,7 @@ public class FirstApp {
 //                    Вычитаем из него значение номера символа в таблице ASCII
                     int newCharAfterSubtract = intFromDouble - (int) aChar;
                     System.out.println("We have clean char = " + aChar);
-//                    И надеемся, что там что-то, кроме "?"
+//                    Надеемся, что там что-то, кроме "?"
                     System.out.println("And dirty char = " + (char)newCharAfterSubtract);
                 }
 //                В случае, если всё-таки получилось не целое число
@@ -54,5 +54,11 @@ public class FirstApp {
         } else {
             System.out.println(aString);
         }
+        System.out.println("And now we can check overflow");
+        byte a = 127;
+        int overflowUp = a + Integer.MAX_VALUE;
+        System.out.println("overflowUp: " + overflowUp + " уходит в минус");
+        int overflowDown = Integer.MIN_VALUE - a;
+        System.out.println("overflowDown: " + overflowDown + " уходит в плюс");
     }
 }
